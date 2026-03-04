@@ -1,41 +1,45 @@
+import 'package:exaula2/widgets/texto.dart';
+import 'package:exaula2/widgets/inputtexto.dart';
+import 'package:exaula2/widgets/botoes.dart';
 import 'package:flutter/material.dart';
-class Home extends StatelessWidget {
+
+class Home extends StatefulWidget {
+
+  @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  String textoAlterado="Texto inicial";
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Exemplo 03"),
-        backgroundColor: Colors.blue,
+        title: Text("Exemplo 04"),
       ),
       body: _body(),
     );
   }
 
-  Widget? _body() {
+  _body() {
     return Container(
       color: Colors.grey,
       child: Column(
         children: [
-          Text("Linha 01", Colors.black),
-          Text("Linha 02", Colors.black),
-          Text("Linha 03", Colors.black)
+          Textos(textoAlterado, Colors.red),
+          InputTexto("Digite seu nome", "Nome", TextEditingController()),
+          Botoes("Texto do botão", onPressed: _click),
+          Textos("Linha 03", Colors.yellow),
+          Textos("Linha 04", Colors.deepOrange)
         ],
       ),
     );
   }
 
-  Text(String s, Color cor) {
-    return Text(
-      s,
-      style: TextStyle(
-          color: cor,
-          backgroundColor: Colors.grey,
-          fontSize: 20,
-          fontStyle: FontStyle.italic,
-          fontWeight: FontWeight.bold,
-      ),
-    );
+  void _click() {
+    setState(() {
+      textoAlterado = "Você apertou o botâo";
+    });
   }
 }
-
