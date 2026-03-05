@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 class Textos extends StatelessWidget {
   String s;
-  Color cor;
-  Textos(this.s, this.cor);
+  Textos(this.s);
 
   @override
   Widget build(BuildContext context) {
@@ -11,9 +10,10 @@ class Textos extends StatelessWidget {
       Text(
         s,
         style: TextStyle(
-            color: cor,
-            backgroundColor: Colors.cyanAccent,
-            fontSize: 33
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+            fontStyle: FontStyle.italic,
+            color: Colors.black
         ),
       );
   }

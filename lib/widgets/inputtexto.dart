@@ -8,10 +8,9 @@ class InputTexto extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
+    return TextField(
       controller: controller,
       style: TextStyle(
-        fontSize: 20,
         color: Colors.black,
         backgroundColor: Colors.white
     ),
