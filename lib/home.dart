@@ -15,6 +15,7 @@ class _HomeState extends State<Home> {
   final _tLista = TextEditingController();
 
   String _resultado = "";
+  Color _corResultado = Colors.black;
 
   @override
   Widget build(BuildContext context) {
@@ -36,11 +37,11 @@ class _HomeState extends State<Home> {
           InputTexto("Digite seu nome", "Nome", _tNome),
           InputTexto("Nota da p1", "p1", _tP1),
           InputTexto("Nota do projeto", "projeto", _tProjeto),
-          InputTexto("Nota das listas", "lista", _tLista),
+          InputTexto("Nota das listas (máx 2)", "lista", _tLista),
           const SizedBox(height: 20),
           Botoes("Calcular Média", onPressed: _click),
           const SizedBox(height: 20),
-          Textos(_resultado),
+          Textos(_resultado, cor: _corResultado),
         ],
       ),
     );
@@ -54,11 +55,17 @@ class _HomeState extends State<Home> {
       double projeto = double.tryParse(_tProjeto.text) ?? 0;
       double lista = double.tryParse(_tLista.text) ?? 0;
 
-      double media = (p1 + projeto + lista) / 3;
+      if (lista > 2) lista = 2;
 
-      String situacao = media >= 6 ? "aprovado" : "reprovado";
+      double media = (projeto * 0.5) + (p1 * 0.3) + lista;
 
-      _resultado = "O aluno $nome foi $situacao com média: ${media.toStringAsFixed(2)}";
+      if (media >= 6) {
+        _resultado = "O aluno $nome foi aprovado com média: ${media.toStringAsFixed(2)}";
+        _corResultado = Colors.blue;
+      } else {
+        _resultado = "O aluno $nome foi reprovado com média: ${media.toStringAsFixed(2)}";
+        _corResultado = Colors.red;
+      }
     });
   }
 }
