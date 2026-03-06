@@ -8,20 +8,37 @@ class Home extends StatelessWidget {
       appBar: AppBar(
         title: Text("Tipos de Layout"),
       ),
-      body: _layoutListView(),
+      // body: _layoutListView(),
+      body: layoutGridView(),
     );
   }
 
-  _layoutListView() {
-   return ListView(
-    children: [
-      Text("Melhor time do mundo"),
-      SuaImagem(caminhoArquivo: "imagens/Derac.jpg"),
-      SuaImagem(caminhoArquivo: "imagens/ADAAng.png"),
-      SuaImagem(caminhoArquivo: "imagens/Elosport.png"),
-      SuaImagem(caminhoArquivo: "imagens/Guarani par.jpg"),
-    ],
-   );
+  // _layoutListView() {
+  //  return ListView(
+  //   children: [
+  //     Text("Melhor time do mundo"),
+  //     SuaImagem(caminhoArquivo: "imagens/Derac.jpg"),
+  //     SuaImagem(caminhoArquivo: "imagens/ADAAng.png"),
+  //     SuaImagem(caminhoArquivo: "imagens/Elosport.png"),
+  //     SuaImagem(caminhoArquivo: "imagens/Guarani par.jpg"),
+  //   ],
+  //  );
+  // }
+
+  Widget? layoutGridView() {
+    return GridView(
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 4, mainAxisSpacing: 10, crossAxisSpacing: 10),
+      children: [
+        SuaImagem(caminhoArquivo: "imagens/ADAAng.png"),
+        SuaImagem(caminhoArquivo: "imagens/Derac.jpg"),
+        SuaImagem(caminhoArquivo: "imagens/Elosport.png"),
+        SuaImagem(caminhoArquivo: "imagens/Guarani par.jpg"),
+        SuaImagem(caminhoArquivo: "imagens/IBIS.png"),
+        SuaImagem(caminhoArquivo: "imagens/OnzedeAgosto tatui.png"),
+        SuaImagem(caminhoArquivo: "imagens/Santos.jpg"),
+        SuaImagem(caminhoArquivo: "imagens/SaoBento.jpg"),
+      ]
+    );
   }
 }
 
