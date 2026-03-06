@@ -1,3 +1,4 @@
+import 'package:exaula2/imagens.dart';
 import 'package:flutter/material.dart';
 class Home extends StatelessWidget {
 
@@ -5,21 +6,22 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Exemplo 02"),
-        backgroundColor: Colors.blue,
+        title: Text("Tipos de Layout"),
       ),
-      body: _body(),
+      body: _layoutListView(),
     );
   }
 
-  Widget? _body() {
-    return ListView(
-      children: [
-        Text("Linha02"),
-        Text("Linha01"),
-        Text("Linha03")
-      ],
-    );
+  _layoutListView() {
+   return ListView(
+    children: [
+      Text("Melhor time do mundo"),
+      SuaImagem(caminhoArquivo: "imagens/Derac.jpg"),
+      SuaImagem(caminhoArquivo: "imagens/ADAAng.png"),
+      SuaImagem(caminhoArquivo: "imagens/Elosport.png"),
+      SuaImagem(caminhoArquivo: "imagens/Guarani par.jpg"),
+    ],
+   );
   }
 }
 
