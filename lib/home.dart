@@ -5,21 +5,14 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Exemplo 02"),
-        backgroundColor: Colors.blue,
+        title: Text("Exemplo"),
       ),
       body: _body(),
     );
   }
 
   Widget? _body() {
-    return ListView(
-      children: [
-        Text("Linha02"),
-        Text("Linha01"),
-        Text("Linha03")
-      ],
-    );
+
   }
 }
 
