@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:exaula2/View/tela01.dart';
+import 'package:exaula2/View/tela02.dart';
 
 class Home extends StatelessWidget {
   @override
@@ -14,6 +15,13 @@ class Home extends StatelessWidget {
               Icons.shopping_cart, color: Colors.white,
             ), onPressed: () {
               _abreTela(context, tela01());
+          },
+          ),
+          IconButton(
+            icon: Icon(
+              Icons.calculate, color: Colors.white,
+            ), onPressed: () {
+              _abreTela(context, tela02());
           },
           )
         ],
