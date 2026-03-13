@@ -1,11 +1,22 @@
 import 'package:flutter/material.dart';
-class Home extends StatelessWidget {
+import 'package:exaula2/View/tela01.dart';
 
+class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Exemplo"),
+        backgroundColor: Colors.deepPurple,
+        title: Text("Menu Inicial", style: TextStyle(color: Colors.white)),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(
+              Icons.shopping_cart, color: Colors.white,
+            ), onPressed: () {
+              _abreTela(context, tela01());
+          },
+          )
+        ],
       ),
       body: _body(),
     );
@@ -14,5 +25,11 @@ class Home extends StatelessWidget {
   Widget? _body() {
 
   }
+
+   _abreTela(context, page) {
+    Navigator.push(context, MaterialPageRoute(builder: (BuildContext context){
+      return page;
+    }));
+   }
 }
 
