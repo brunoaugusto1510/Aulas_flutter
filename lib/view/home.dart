@@ -9,6 +9,26 @@ class Home extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("Menu"),
+        actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => Tela01()));
+            },
+            icon: Icon(Icons.celebration),
+          ),
+          IconButton(
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => Tela02()));
+            },
+            icon: Icon(Icons.bus_alert),
+          ),
+          IconButton(
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => Tela03()));
+            },
+            icon: Icon(Icons.computer),
+          ),
+        ],
       ),
       body: Column(
         children: [
